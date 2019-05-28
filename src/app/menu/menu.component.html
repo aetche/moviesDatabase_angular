@@ -1,0 +1,4 @@
+<nav class="nav flex-column">
+  <a class="nav-link active" routerLink='/popular'>Popular</a>
+  <a class="nav-link" *ngFor ='let genre of genres' routerLink='/discover/movie/{{genre.id}}'>{{genre.name}}</a>
+</nav>

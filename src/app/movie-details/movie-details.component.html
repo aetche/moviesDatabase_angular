@@ -1,0 +1,14 @@
+<div class="jumbotron" *ngIf='movieDetail'>
+  <h1 class="display-4">{{movieDetail.title}}</h1>
+  <div class="media">
+    <div class="media-content">
+        <div class="progress">
+            <div class="progress-bar" [style.width.%]="movieDetail.vote_average*10" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">Vote average: {{movieDetail.vote_average}}</div>
+        </div>
+      <p>{{movieDetail.overview}}</p>
+      <p>Release date: {{movieDetail.release_date}}</p>
+    </div>
+    <img src="https://image.tmdb.org/t/p/w400{{movieDetail.poster_path}}" class="align-self-start mr-3" alt="...">
+  </div>
+  <a class="btn btn-primary btn-lg" (click)='goBack()' role="button">Back</a>
+</div>
