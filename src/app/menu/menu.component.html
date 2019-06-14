@@ -1,4 +1,6 @@
-<nav class="nav flex-column">
-  <a class="nav-link active" routerLink='/popular'>Popular</a>
-  <a class="nav-link" *ngFor ='let genre of genres' routerLink='/discover/movie/{{genre.id}}'>{{genre.name}}</a>
+<nav class="nav nav-pills flex-column">
+  <a class="nav-link active" routerLink='/movies/popular' routerLinkActive="active">Popular</a>
+  <a class="nav-link" routerLink='/movies/top_rated' routerLinkActive="active">Top Rated</a>
+  <a class="nav-link" routerLink='/movies/upcoming' routerLinkActive="active">Upcoming</a>
+  <a class="nav-link" *ngFor ='let genre of genres' routerLink='/movies/discover/{{genre.id}}' routerLinkActive="active">{{genre.name}}</a>
 </nav>

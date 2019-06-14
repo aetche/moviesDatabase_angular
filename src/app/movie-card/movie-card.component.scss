@@ -1,0 +1,19 @@
+.card{
+    background-color:inherit;
+    color:white;
+    text-transform: uppercase;
+    h5{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .progress{
+        display: none;
+    }
+}
+    .card:hover{
+        .progress{
+            display: flex;
+            height: 4px;
+            opacity: 0.5;
+        }
+    }

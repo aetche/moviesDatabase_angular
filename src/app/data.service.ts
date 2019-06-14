@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieDetail } from './MovieDetail';
 import { MoviesList } from './MoviesList';
 import { Genre } from './Genre';
@@ -17,6 +16,18 @@ export class DataService {
   constructor(private http:HttpClient) { 
     console.log('Service is working...')
   }
+
+  getMovies(category: string): Observable<MoviesList>{
+    switch(category){
+      case 'popular':
+        return this.http.get<MoviesList>(`${this.urlMovieDB}/movie/popular?api_key=${this.apiKey}&language=en-US&page=1`);
+      case 'top_rated':
+        return this.http.get<MoviesList>(`${this.urlMovieDB}/movie/top_rated?api_key=${this.apiKey}&language=en-US&page=1`);
+      case 'upcoming':
+        return this.http.get<MoviesList>(`${this.urlMovieDB}/movie/upcoming?api_key=${this.apiKey}&language=en-US&page=1`);
+    }
+  }
+
   getGenresCategories(): Observable<Genre> {
     return this.http.get<Genre>(`${this.urlMovieDB}/genre/movie/list?api_key=${this.apiKey}&language=en-US`)
   }
@@ -29,7 +40,7 @@ export class DataService {
     return this.http.get<MovieDetail>(`${this.urlMovieDB}/movie/${id}?api_key=${this.apiKey}&language=en-US`);
   }
 
-  getPopular(): Observable<MoviesList> {
-    return this.http.get<MoviesList>(`${this.urlMovieDB}/movie/popular?api_key=${this.apiKey}&language=en-US&page=1`);
+  getSearch(input:string): Observable<MoviesList> {
+    return this.http.get<MoviesList>(`${this.urlMovieDB}/search/movie?api_key=${this.apiKey}&language=en-US&query=${input}&page=1&include_adult=false`)
   }
 }

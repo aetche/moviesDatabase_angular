@@ -1,0 +1,4 @@
+  <div class="search-input ion-md-search animated fadeIn">
+    <input class="ion-md-search animated slideInRight" type="text" placeholder="Search" #searchInput (keyUp.enter)="searchMovie(searchInput.value)">
+    <span class="ion-md-checkmark animated slideInRight" (click)="searchMovie(searchInput.value)"></span>
+  </div>

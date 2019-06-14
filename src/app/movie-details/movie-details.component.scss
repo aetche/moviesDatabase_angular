@@ -1,10 +1,19 @@
 
-.jumbotron{
+.media{
     background: linear-gradient(45deg, #0f1d25 0%, #3d96d2 100%);
     color: white;
+    h1{
+        font-size: 3rem;
+        text-shadow: 2px 3px 5px rgba(0,0,0,0.6);
+    }
+    img{
+        -webkit-box-shadow: -10px 0px 13px -7px rgba(0,0,0,0.5), 10px 0px 13px -7px rgba(0,0,0,0.5); 
+        box-shadow: -10px 0px 13px -7px rgba(0,0,0,0.5), 10px 0px 13px -7px rgba(0,0,0,0.5);
+    }
     .media-content{
-         margin: 2rem;
+         margin: 0 2rem;
         .progress{
+            margin: 1rem 0;
             opacity: 0.8;
             text-transform: uppercase;
             background-color: #e9ecef33;
@@ -14,6 +23,36 @@
         }
         p{
             margin: 2rem 0;
+            padding: 0 1rem;
+            border-radius: 5px;
         }
+        span{
+            border-right: 1px solid white;
+            padding: 0 0.5rem;
+            font-size: 0.7rem;
+        }
+        span:last-child{
+            border-right: none;
+        }
+        .list-group{
+           .list-group-item{
+               background-color: inherit;
+               border-color: darkgrey;
+               padding: 0.3rem 1rem;
+               margin: 1rem 0;
+               font-size: 0.7rem;
+           }
+        }
+    }
+}
+
+
+.media .media-content .vote_average{
+    span{
+        font-size: 1.3rem;
+        border: none;
+    }
+    .ion-md-star-outline{
+        opacity: 0.7;
     }
 }

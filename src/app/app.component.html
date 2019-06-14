@@ -2,14 +2,15 @@
   <h1>
     The Movie Database
   </h1>
-  <app-menu-discover></app-menu-discover>
 </header>
 
 <div class="container-fluid">
+    <app-search></app-search>
   <div class="row">
     <app-menu class="col-2"></app-menu>
     <div class="col">
-      <router-outlet></router-outlet>
+      <router-outlet>
+      </router-outlet>
     </div>
   </div>
 </div>

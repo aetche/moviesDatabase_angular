@@ -11,6 +11,7 @@ import { MovieDetail } from '../MovieDetail';
 })
 export class MovieDetailsComponent implements OnInit {
   movieDetail: MovieDetail;
+  voteAverage: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class MovieDetailsComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.dataService.getDetails(id).subscribe(movie => {
       this.movieDetail = movie;
+      this.voteAverage = movie.vote_average;
       console.log('Detalles: ',this.movieDetail);
     })
   }

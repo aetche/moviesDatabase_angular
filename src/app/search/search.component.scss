@@ -1,0 +1,59 @@
+
+:host{
+    position: relative;
+    top:-20px;
+}
+
+.search-input{
+    background: #3d96d2;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin: auto;
+    margin-right: 2rem;
+    -webkit-box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255,0.5);
+    box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255,0.5);
+    text-align: left;
+    input, span{
+        display: none;
+    }
+}
+
+.search-input::before{
+    content: "\f4a5";
+    font-size: 1.4rem;
+    color: white;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    text-align: center;
+}
+
+.search-input:hover{
+    width: 280px;
+    input, span {
+        display: inline;
+    }
+    input{
+        margin-left: 40px;
+        border: none;
+        height: inherit;
+        background: none;
+        color: white;
+    }
+    input::placeholder{
+        color: rgba(255, 255, 255,0.5);
+    }
+    span{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        right: 0;
+        top: 10px;
+        text-align: center;
+        color: white;
+    }
+}
