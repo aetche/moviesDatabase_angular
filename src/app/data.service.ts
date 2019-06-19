@@ -43,4 +43,8 @@ export class DataService {
   getSearch(input:string): Observable<MoviesList> {
     return this.http.get<MoviesList>(`${this.urlMovieDB}/search/movie?api_key=${this.apiKey}&language=en-US&query=${input}&page=1&include_adult=false`)
   }
+
+  getTrailer(id: number): Observable<any> {
+    return this.http.get<any>(`${this.urlMovieDB}/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`)
+  }
 }

@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
+import { TrailerComponent } from './movie-details/trailer/trailer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MoviesComponent } from './movies/movies.component';
     MovieDetailsComponent,
     SearchComponent,
     MovieCardComponent,
-    MoviesComponent
+    MoviesComponent,
+    TrailerComponent
   ],
   imports: [
     BrowserModule,

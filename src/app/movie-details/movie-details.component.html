@@ -5,7 +5,7 @@
       <div>
 
         <ul class="list-group list-group-horizontal-sm">
-          <li class="list-group-item" *ngFor= 'let genre of movieDetail.genres'>{{genre.name}}</li>
+          <li class="list-group-item" *ngFor= 'let genre of movieDetail.genres' routerLink='/movies/discover/{{genre.id}}'>{{genre.name}}</li>
         </ul>
             <div>
               <span>{{movieDetail.runtime}} min</span>
@@ -13,12 +13,6 @@
               <span>{{movieDetail.release_date | date:'y' }}</span>
             </div>
       </div>
-
-      <!-- <div> -->
-        <!-- <span *ngFor='let star of 10' class="icon ion-md-star" style="font-size: 2rem"></span> -->
-        <!-- <span class="icon ion-md-star-half" style="font-size: 2rem">{{voteAverage}}</span>
-        <span *ngIf="voteAverage > 5" class="icon ion-md-star-outline" style="font-size: 2rem"></span>
-      </div> -->
 
       <div class="vote_average">
         <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage < 1, 'ion-md-star-half': voteAverage < 2, 'ion-md-star': voteAverage >= 2  }" ></span>
@@ -28,18 +22,12 @@
         <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 8, 'ion-md-star-half': voteAverage < 10, 'ion-md-star': voteAverage >= 10  }" ></span>
       </div>
 
-      <!-- <div class="progress">
-        <div class="progress-bar" [style.width.%]="movieDetail.vote_average*10" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">Vote average: {{movieDetail.vote_average}}</div>
-      </div> -->
-
       <p>{{movieDetail.overview}}</p>
       
-      <div>
-        <span class="icon ion-md-home"></span>
-        <span class="icon ion-md-videocam"></span>
-      </div>
-
+      <a class="btn btn-primary btn-sm icon ion-md-home" title="Website" href="{{movieDetail.homepage}}"><span>Website</span></a>
+      <a data-toggle="modal" data-target="#trailerModal" class="btn btn-primary btn-sm icon ion-md-videocam" title="Trailer" (click)="isOff= false"><span>Trailer</span></a>
       <a class="btn btn-primary btn-sm" (click)='goBack()' role="button">Back</a>
+      <app-trailer [hidden]="isOff" [movieId] = movieDetail.id></app-trailer>
     </div>
     <img src="https://image.tmdb.org/t/p/w400{{movieDetail.poster_path}}" class="align-self-start mr-3" alt="...">
   </div>

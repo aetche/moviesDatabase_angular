@@ -12,6 +12,7 @@ import { MovieDetail } from '../MovieDetail';
 export class MovieDetailsComponent implements OnInit {
   movieDetail: MovieDetail;
   voteAverage: string;
+  isOff: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +32,7 @@ export class MovieDetailsComponent implements OnInit {
       console.log('Detalles: ',this.movieDetail);
     })
   }
+
   goBack(): void {
     this.location.back();
   }

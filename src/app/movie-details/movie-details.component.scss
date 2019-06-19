@@ -12,15 +12,7 @@
     }
     .media-content{
          margin: 0 2rem;
-        .progress{
-            margin: 1rem 0;
-            opacity: 0.8;
-            text-transform: uppercase;
-            background-color: #e9ecef33;
-            .progress-bar{
-                background-color: #0f1d24b0;
-            }
-        }
+        
         p{
             margin: 2rem 0;
             padding: 0 1rem;
@@ -41,6 +33,10 @@
                padding: 0.3rem 1rem;
                margin: 1rem 0;
                font-size: 0.7rem;
+               cursor: pointer;
+               &:hover{
+                    background: rgba(0,0,0,0.4);
+               }
            }
         }
     }
