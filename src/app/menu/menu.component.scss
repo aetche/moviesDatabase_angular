@@ -8,4 +8,36 @@ $orange: #FF773D;
 :host{
     font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
+    position: relative;
+    .navbar-collapse{
+        align-items: flex-start;   
+    }
+    z-index:2;
+    a {
+        z-index: 1;
+        border: 1px solid #0f1d25;
+    }
+}
+
+@media (max-width: 1050px) {
+    nav{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    nav{
+        position: absolute;
+        top: -60px;
+    }
+    .navbar-toggler{
+        span{
+            border-radius: 10px;
+            font-size: 1.4rem;
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
 }

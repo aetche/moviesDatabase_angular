@@ -10,22 +10,6 @@ html {
     }
 } 
 
-
-.content-right{
-    background: rgba(15,29,37,1);
-    background: -moz-linear-gradient(45deg, rgba(15,29,37,1) 0%, rgba(61,150,210,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(15,29,37,1)), color-stop(100%, rgba(61,150,210,1)));
-    background: -webkit-linear-gradient(45deg, rgba(15,29,37,1) 0%, rgba(61,150,210,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(15,29,37,1) 0%, rgba(61,150,210,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(15,29,37,1) 0%, rgba(61,150,210,1) 100%);
-    background: linear-gradient(45deg, rgba(15,29,37,1) 0%, rgba(61,150,210,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f1d25', endColorstr='#3d96d2', GradientType=1 );
-    margin: 0 2rem;
-    padding: 2rem;
-    border-radius: 10px;
-    color: white;
-}
-
 .animated {
     -webkit-animation-duration: 1s !important;
     animation-duration: 1s !important;
