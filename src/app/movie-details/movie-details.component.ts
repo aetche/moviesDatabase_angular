@@ -13,6 +13,7 @@ export class MovieDetailsComponent implements OnInit {
   movieDetail: MovieDetail;
   voteAverage: string;
   isOff: boolean = true;
+  cast: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,15 +22,24 @@ export class MovieDetailsComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.getDetails();
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.getDetails(id);
+    this.getCast(id);
   }
 
-  getDetails(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+  getDetails(id): void {
     this.dataService.getDetails(id).subscribe(movie => {
       this.movieDetail = movie;
       this.voteAverage = movie.vote_average;
       console.log('Detalles: ',this.movieDetail);
+    })
+  }
+
+  getCast(id): void {
+    this.dataService.getCast(id).subscribe(credits => {
+      let cast = credits.cast;
+      this.cast = cast;
+      console.log(cast);
     })
   }
 

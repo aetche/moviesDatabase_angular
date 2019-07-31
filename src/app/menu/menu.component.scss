@@ -8,7 +8,8 @@ $orange: #FF773D;
 :host{
     font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
-    position: relative;
+    padding: 2rem 1rem;
+    background: #0f1d25;
     .navbar-collapse{
         align-items: flex-start;   
     }
@@ -26,17 +27,45 @@ $orange: #FF773D;
 }
 
 @media (max-width: 800px) {
+    :host{
+        z-index: 1;
+    }
     nav{
-        position: absolute;
-        top: -60px;
+        padding: 10px;
     }
     .navbar-toggler{
+        border-radius: 10px;
+        height: 40px;
+        background: #3d96d2 !important;
+        box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255, 0.5);
         span{
-            border-radius: 10px;
             font-size: 1.4rem;
             color: white;
             width: 40px;
             height: 40px;
+        }
+    }
+    .navbar-collapse{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        background: #0f1d25;
+        padding: 10px;
+        padding-right: 20px;
+        .button{
+            margin: 10px auto;
+            margin-bottom: 20px;
+            text-align: right;
+            button{
+                height: 30px;
+                color:white;
+                border-radius: 0.25rem;
+                background: #007bff;
+                font-size: 14px;
+                padding: 5px 8px;
+            } 
         }
     }
     

@@ -8,6 +8,7 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
   movies = {};
+  prop;
   constructor(private dataService:DataService) {
    }
 }

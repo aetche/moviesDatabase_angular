@@ -1,20 +1,18 @@
 
-:host{
-    position: relative;
-    top:-20px;
-}
-
 .search-input{
     background: #3d96d2;
     position: relative;
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    margin: auto;
+    margin-left: auto;
     margin-right: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
     -webkit-box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255,0.5);
     box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255,0.5);
     text-align: left;
+    z-index: 2;
     input, span{
         display: none;
     }
@@ -55,5 +53,15 @@
         top: 10px;
         text-align: center;
         color: white;
+    }
+}
+
+
+@media (max-width: 800px) {
+    :host{
+        .search-input{
+            position: absolute;
+            right: 10px;
+        }
     }
 }

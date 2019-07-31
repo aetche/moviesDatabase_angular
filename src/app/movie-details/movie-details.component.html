@@ -1,34 +1,51 @@
-    <div class="jumbotron row" *ngIf='movieDetail'>
-      <div class="jumbotron-content col-md-7">
-        <h1 class="display-4">{{movieDetail.title}}</h1>
-      
-        <div>
-          <ul class="list-group list-group-horizontal-sm">
-            <li class="list-group-item" *ngFor= 'let genre of movieDetail.genres' routerLink='/movies/discover/{{genre.id}}'>{{genre.name}}</li>
-          </ul>
-              <div>
-                <span>{{movieDetail.runtime}} min</span>
-                <span *ngFor = 'let lang of movieDetail.spoken_languages'> {{lang.name}} </span>
-                <span>{{movieDetail.release_date | date:'y' }}</span>
+<div class="jumbotron row" *ngIf='movieDetail'>
+  <div class="jumbotron-content col-md-7">
+    <h1 class="display-4">{{movieDetail.title}}</h1>
+  
+    <div>
+      <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item" *ngFor= 'let genre of movieDetail.genres' routerLink='/movies/discover/{{genre.id}}'>{{genre.name}}</li>
+      </ul>
+          <div>
+            <span>{{movieDetail.runtime}} min</span>
+            <span *ngFor = 'let lang of movieDetail.spoken_languages'> {{lang.name}} </span>
+            <span>{{movieDetail.release_date | date:'y' }}</span>
+          </div>
+    </div>
+
+    <div class="vote_average">
+      <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage < 1, 'ion-md-star-half': voteAverage < 2, 'ion-md-star': voteAverage >= 2  }" ></span>
+      <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 2, 'ion-md-star-half': voteAverage < 4, 'ion-md-star': voteAverage >= 4  }" ></span>
+      <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 4, 'ion-md-star-half': voteAverage < 6, 'ion-md-star': voteAverage >= 6  }" ></span>
+      <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 6, 'ion-md-star-half': voteAverage < 8, 'ion-md-star': voteAverage >= 8  }" ></span>
+      <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 8, 'ion-md-star-half': voteAverage < 10, 'ion-md-star': voteAverage >= 10  }" ></span>
+    </div>
+
+    <div class="container-cast">
+      <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#showCast" aria-expanded="false" aria-controls="showCast">
+        Cast of the movie
+      </button>
+      <div class="collapse" id="showCast">
+          <div class="cast">
+              <div class="character" *ngFor = 'let character of cast' title='{{character.name}}'> 
+                  <img src="https://image.tmdb.org/t/p/w400{{character.profile_path}}" alt="">
               </div>
-        </div>
-
-        <div class="vote_average">
-          <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage < 1, 'ion-md-star-half': voteAverage < 2, 'ion-md-star': voteAverage >= 2  }" ></span>
-          <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 2, 'ion-md-star-half': voteAverage < 4, 'ion-md-star': voteAverage >= 4  }" ></span>
-          <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 4, 'ion-md-star-half': voteAverage < 6, 'ion-md-star': voteAverage >= 6  }" ></span>
-          <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 6, 'ion-md-star-half': voteAverage < 8, 'ion-md-star': voteAverage >= 8  }" ></span>
-          <span class="icon" [ngClass] = "{'ion-md-star-outline': voteAverage <= 8, 'ion-md-star-half': voteAverage < 10, 'ion-md-star': voteAverage >= 10  }" ></span>
-        </div>
-
-       <p>{{movieDetail.overview}}</p>
-      
-        <a class="btn btn-primary btn-sm icon ion-md-home" title="Website" href="{{movieDetail.homepage}}"><span>Website</span></a>
-        <a data-toggle="modal" data-target="#trailerModal" class="btn btn-primary btn-sm icon ion-md-videocam" title="Trailer" (click)="isOff= false"><span>Trailer</span></a>
-        <a class="btn btn-primary btn-sm ion-md-arrow-round-back" (click)='goBack()' role="button"><span>Back</span></a>
-        <app-trailer [hidden]="isOff" [movieId] = movieDetail.id></app-trailer>
+            </div>
+      </div>
     </div>
-    <div class="col-md-5">
-      <img src="https://image.tmdb.org/t/p/w400{{movieDetail.poster_path}}" class="align-self-start mr-3" alt="...">
-    </div>
-  </div>
+
+   <p>{{movieDetail.overview}}</p>
+    
+
+    <a class="btn btn-primary btn-sm icon ion-md-home" title="Website" href="{{movieDetail.homepage}}"><span>Website</span></a>
+    <a data-toggle="modal" data-target="#trailerModal" class="btn btn-primary btn-sm icon ion-md-videocam" title="Trailer" (click)="isOff= false"><span>Trailer</span></a>
+    <a class="btn btn-primary btn-sm ion-md-arrow-round-back" (click)='goBack()' role="button"><span>Back</span></a>
+    <app-trailer [hidden]="isOff" [movieId] = movieDetail.id></app-trailer>
+</div>
+<div class="col-md-5">
+  <img src="https://image.tmdb.org/t/p/w400{{movieDetail.poster_path}}" class="align-self-start mr-3" alt="...">
+</div>
+</div>
+
+
+

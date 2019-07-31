@@ -20,7 +20,7 @@ import { TrailerComponent } from './movie-details/trailer/trailer.component';
     SearchComponent,
     MovieCardComponent,
     MoviesComponent,
-    TrailerComponent
+    TrailerComponent,
   ],
   imports: [
     BrowserModule,

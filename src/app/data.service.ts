@@ -45,6 +45,10 @@ export class DataService {
   }
 
   getTrailer(id: number): Observable<any> {
-    return this.http.get<any>(`${this.urlMovieDB}/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`)
+    return this.http.get<any>(`${this.urlMovieDB}/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`);
+  }
+
+  getCast(id: number): Observable<any> {
+    return this.http.get<any>(`${this.urlMovieDB}/movie/${id}/credits?api_key=${this.apiKey}`);
   }
 }
